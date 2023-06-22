@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.7.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.7.0/react-dom.js"></script>
+  </head>
+  <body>
+    <div class="root"></div>
+    <script>
+      // document.createElement is different from React.createElement
+      // different set of attributes is what the second parameter says belonging to that element.
+      let h1Element = React.createElement(
+        "h1",
+        { id: "header" },
+        "This holds the content of the element. HELLO REACT"
+      );
+
+      let pElement = React.createElement("p", {}, "this is a para !");
+      let sectionElement = React.createElement("section", {}, [
+        h1Element,
+        pElement,
+      ]);
+
+      //   ReactDOM.render(h1Element, document.querySelector(".root"));
+      ReactDOM.render(sectionElement, document.querySelector(".root"));
+    </script>
+  </body>
+</html>
